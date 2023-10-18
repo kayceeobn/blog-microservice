@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: posts
-          image: rallycoding/posts-100
+          image: kobn/posts:latest
 ---
 apiVersion: v1
 kind: Service

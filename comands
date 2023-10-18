@@ -1,0 +1,32 @@
+kubectl get deployments
+
+>>> RESTART deployments
+kubectl rollout restart deployment posts-depl
+
+>>> get logs from pod
+kubectl logs <name-of-pod>
+
+>>from infra/k8s
+kubectl apply -f post-depl.yaml
+
+
+>>Rebuild image
+>>>>From ./posts folder
+docker build -t <mydockerid>/posts .
+docker build -t kobn/posts .
+
+
+>>>>PUSH to docker hub
+docker push kobn/posts
+
+>>> DELETE deployment
+kubectl delete deployment --all
+
+>>>>GET services
+kubectl get services
+
+>>>> CREATE INGRESS-NGINX
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.8.2/deploy/static/provider/cloud/deploy.yaml
+
+>>>>SHORTCUT TO START - USE SKAFFOLD>>>Start SKAFFOLD
+skaffold dev

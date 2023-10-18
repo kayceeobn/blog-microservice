@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: client
-          image: rallycoding/client-99
+          image: kobn/client:latest
 ---
 apiVersion: v1
 kind: Service
